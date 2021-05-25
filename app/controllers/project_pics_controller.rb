@@ -1,7 +1,7 @@
 class ProjectPicsController < ApplicationController
 
-  def index
+  def edit
 
   end
-  
+
 end

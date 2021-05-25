@@ -1,7 +1,7 @@
 class AboutController < ApplicationController
 
-  def index
+  def edit
 
   end
-  
+
 end

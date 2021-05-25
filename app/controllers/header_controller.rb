@@ -1,7 +1,7 @@
 class HeaderController < ApplicationController
 
-  def index
-
+  def edit
+    @info = Info.all.first
   end
-  
+
 end
