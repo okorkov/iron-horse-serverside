@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     else
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to admin_index_path
+        redirect_to root_path
       else
         @error = "Invalid password"
         render :new
@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+
     reset_session
     redirect_to new_session_path
   end
