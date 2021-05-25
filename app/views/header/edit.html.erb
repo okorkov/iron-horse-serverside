@@ -1,7 +1,7 @@
 
 <h3 id="welcome-message">Header</h3>
 <div class="category container">
-<%=image_tag @info.header_img, class:'header-img' %>
+
   <%=form_for @info, local: true do |f| %>
     <%= f.label :header_image_file_upload %>
     <%=f.file_field :header_image, class:"form-control" %>
