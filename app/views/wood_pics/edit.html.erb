@@ -4,13 +4,21 @@
 <div class="category container">
   
 <%@info.wood_pics.each do |img|%>
+  <div class="collection-of-images">
   <%=image_tag img, class:'header-img'%>
-<%end%>
+   <%= link_to 'Remove', delete_image_attachment_collections_wood_url(img.signed_id),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+  </div>
+  <%end%>
 
     <%=form_for @info do |f| %>
     <%= f.label :upload_project_images %>
-    <%=f.file_field :wood_pics, multiple:true, class:"form-control" %>
+    <%=f.file_field :wood_pics, multiple:true, class:"form-control", required: true  %>
     <br>
     <%=f.submit "Update Wood Images", class:"btn btn-primary btn"%>
   <%end%>
 </div>
+
+
+delete_image_attachment_collections_wood

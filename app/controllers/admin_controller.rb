@@ -6,4 +6,16 @@ class AdminController < ApplicationController
     
   end
 
+  def delete_collections_projects
+    @image = ActiveStorage::Blob.find_signed(params[:id])
+    @image.attachments.first.purge
+    redirect_to edit_project_pic_path
+  end
+
+  def delete_collections_wood
+    @image = ActiveStorage::Blob.find_signed(params[:id])
+    @image.attachments.first.purge
+    redirect_to edit_wood_pic_path
+  end
+
 end

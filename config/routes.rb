@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :contact, only: [:edit]
   resources :info, only: [:update]
 
+  delete '/admin/delete_images_projects/:id', to: 'admin#delete_collections_projects', as: 'delete_image_attachment_collections_projects'
+  delete '/admin/delete_images_wood/:id', to: 'admin#delete_collections_wood', as: 'delete_image_attachment_collections_wood'
+
 end
