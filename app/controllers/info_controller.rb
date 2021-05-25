@@ -1,7 +1,9 @@
 class InfoController < ApplicationController
   def update
+    # raise params.inspect
     info = Info.all.first
     info.update(info_params)
+    info.header_img.attach(params[:info][:header_image]) if params[:info][:header_image]
     redirect_to root_path
   end
 
