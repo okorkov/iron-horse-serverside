@@ -1,13 +1,14 @@
 <h3 id="welcome-message">About</h3>
 
-<div class="category">
+<div class="category container">
 <%=image_tag @info.about_img, class:'header-img' %>
+<br>
     <%=form_for @info do |f| %>
     <%= f.label :main_image_file_upload %>
     <%=f.file_field :about_img, class:"form-control" %>
     <br>
     <%= f.label :about_text %>
-    <%=f.text_field :about_text, class:"form-control" %>
+    <%=f.text_area :about_text, class:"form-control" %>
     <br>
     <%=f.submit "Update About", class:"btn btn-primary btn"%>
   <%end%>
