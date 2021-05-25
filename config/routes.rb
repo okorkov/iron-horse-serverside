@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :header
+  resources :about
+  resources :project_pics
+  resources :wood_pics
+  resources :contact
+
 end
