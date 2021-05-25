@@ -23,6 +23,9 @@
       <li class="nav-item">
         <a class="nav-link" href="<%=edit_contact_path(Info.all.first)%>">Contact</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=admin_index_path%>">Admin Accounts</a>
+      </li>
       <li style="position:absolute; right:0; padding-right: 5%;">
         <%=form_tag session_path(current_user), class:'form-group', method:'delete' do%>
           <%=submit_tag 'Log Out', class: "btn btn-danger"%>

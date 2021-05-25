@@ -18,4 +18,9 @@ class AdminController < ApplicationController
     redirect_to edit_wood_pic_path
   end
 
+  def index
+    @admins = User.all
+    @user = User.new
+  end
+
 end

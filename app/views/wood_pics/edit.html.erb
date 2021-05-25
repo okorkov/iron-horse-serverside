@@ -13,11 +13,11 @@
   <%end%>
 
     <%=form_for @info do |f| %>
-    <%= f.label :upload_project_images %>
-    <%=f.file_field :wood_pics, multiple:true, class:"form-control", required: true  %>
-    <br>
-    <%=f.submit "Update Wood Images", class:"btn btn-primary btn"%>
-  <%end%>
+      <%= f.label :upload_project_images %>
+      <%=f.file_field :wood_pics, multiple:true, class:"form-control", required: true  %>
+      <br>
+      <%=f.submit "Update Wood Images", class:"btn btn-primary btn"%>
+    <%end%>
 </div>
 
 
