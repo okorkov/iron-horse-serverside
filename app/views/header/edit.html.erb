@@ -2,5 +2,13 @@
 <h3 id="welcome-message">Header</h3>
 
 <div class="category">
-  <p>content</p>
+  <%=form_for @info do |f| %>
+    <%= f.label :header_image %>
+    <%=f.text_field :header_image, class:"form-control" %>
+    <br>
+    <%= f.label :header_text %>
+    <%=f.text_field :header_text, class:"form-control" %>
+    <br>
+    <%=f.submit "Update Headers", class:"btn btn-primary btn"%>
+  <%end%>
 </div>

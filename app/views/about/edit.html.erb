@@ -1,5 +1,13 @@
 <h3 id="welcome-message">About</h3>
 
 <div class="category">
-  <p>content</p>
+    <%=form_for @info do |f| %>
+    <%= f.label :main_image %>
+    <%=f.text_field :main_image, class:"form-control" %>
+    <br>
+    <%= f.label :about_text %>
+    <%=f.text_field :about_text, class:"form-control" %>
+    <br>
+    <%=f.submit "Update Headers", class:"btn btn-primary btn"%>
+  <%end%>
 </div>

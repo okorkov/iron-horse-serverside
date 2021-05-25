@@ -16,4 +16,8 @@ module ApplicationHelper
      session[:user_id] != nil
    end
 
+   def info_store
+    @info = Info.all.first
+   end
+
 end
