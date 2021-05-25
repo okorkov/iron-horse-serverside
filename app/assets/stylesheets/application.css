@@ -67,3 +67,7 @@
   border: 3px solid black;
   margin-bottom: 3%;
 }
+
+.nav-link {
+  text-decoration: underline;
+}
