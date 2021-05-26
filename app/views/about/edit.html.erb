@@ -1,7 +1,7 @@
 <h3 id="welcome-message">About</h3>
 
 <div class="category container">
-<%=image_tag @info.header_img.service.send(:object_for, @info.header_img.key).public_url, class:'header-img' %>
+<%=image_tag @info.about_img.service.send(:object_for, @info.about_img.key).public_url, class:'header-img' %>
 <br>
     <%=form_for @info do |f| %>
     <%= f.label :main_image_file_upload %>
