@@ -2,7 +2,7 @@
 
 <div class="category container">
 <%if @info.about_img.attached?%>
-  <%=image_tag @info.about_img.service.send(:object_for, @info.about_img.key).public_url, class:'header-img' %>
+ 
 <%else%>
   <h4>No Image Attached Yet</h4>
 <%end%>
