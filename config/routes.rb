@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'admin#home'
@@ -17,5 +18,5 @@ Rails.application.routes.draw do
   delete '/admin/delete_images_wood/:id', to: 'admin#delete_collections_wood', as: 'delete_image_attachment_collections_wood'
 
   match "*any", via: :all, to: "errors#not_found"
-  
+
 end

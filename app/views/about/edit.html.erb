@@ -1,11 +1,11 @@
 <h3 id="welcome-message">About</h3>
 
 <div class="category container">
-<%=image_tag @info.about_img, class:'header-img' %>
+<%=image_tag @info.header_img.service.send(:object_for, @info.header_img.key).public_url, class:'header-img' %>
 <br>
     <%=form_for @info do |f| %>
     <%= f.label :main_image_file_upload %>
-    <%=f.file_field :about_img, class:"form-control" %>
+    <%=f.file_field :about_img, accept: 'image/png,image/gif,image/jpeg', class:"form-control" %>
     <br>
     <%= f.label :about_text %>
     <%=f.text_area :about_text, class:"form-control" %>
