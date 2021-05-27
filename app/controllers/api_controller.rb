@@ -1,5 +1,7 @@
 class ApiController < ApplicationController
 
+  skip_before_action :require_login
+
   def data
     info = Info.all.first
     user = User.all.first
