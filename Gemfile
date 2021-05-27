@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "aws-sdk-s3", require: false
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'cors', '~> 1.0', '>= 1.0.1'
+gem 'bootstrap-email'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
