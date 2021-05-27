@@ -7,6 +7,9 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Date When Created</th>
+      <%if current_user.admin%>
+      <th scope="col">Delete Admin Account</th>
+      <%end%>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +20,13 @@
       <td><%=admin.name%></td>
       <td><%=admin.email%></td>
       <td><%=admin.created_at.strftime('%m/%d/%Y')%></td>
+      <%if current_user.admin%>
+      <td>
+       <%= link_to 'Remove', user_path(admin),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+      </td>
+      <%end%>
       <%counter += 1%>
       </tr> 
     <%end%>
