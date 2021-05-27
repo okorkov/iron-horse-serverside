@@ -33,17 +33,19 @@
   </tbody>
 </table>
   <h4 style="text-align:center; color:red;"><%=@error%></h4>
-      <%=form_for @user do |f| %>
-        <%= f.label :first_and_last_name %>
-        <%=f.text_field  :name, class:"form-control", placeholder:'Charles Gehrig', required: true  %>
-        <%= f.label :email_address %>
-        <%=f.text_field :email, class:'form-control', placeholder:'Charles@ironhorsestudio.net', :required => true %>
-        <%= f.label :password %>
-        <%=f.text_field :password, class:'form-control', placeholder:'12345qwerty', :required => true %>
-        <%= f.label :password_confirmation %>
-        <%=f.text_field :password_confirmation, class:'form-control', placeholder:'12345qwerty', :required => true %>
-        <br>
-        <%=f.submit "Create New Admin Account", class:"btn btn-primary btn"%>
-      <%end%>
+  <%if current_user.admin%>
+    <%=form_for @user do |f| %>
+      <%= f.label :first_and_last_name %>
+      <%=f.text_field  :name, class:"form-control", placeholder:'Charles Gehrig', required: true  %>
+      <%= f.label :email_address %>
+      <%=f.text_field :email, class:'form-control', placeholder:'Charles@ironhorsestudio.net', :required => true %>
+      <%= f.label :password %>
+      <%=f.text_field :password, class:'form-control', placeholder:'12345qwerty', :required => true %>
+      <%= f.label :password_confirmation %>
+      <%=f.text_field :password_confirmation, class:'form-control', placeholder:'12345qwerty', :required => true %>
+      <br>
+      <%=f.submit "Create New Admin Account", class:"btn btn-primary btn"%>
+    <%end%>
+  <%end%>
 
 </div>
