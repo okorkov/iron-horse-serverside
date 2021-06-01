@@ -14,6 +14,6 @@
     <%= f.label :header_text %>
     <%=f.text_field :header_text, class:"form-control" %>
     <br>
-    <%=f.submit "Update Headers", class:"btn btn-primary btn"%>
+    <%=f.submit "Update Headers", class:"btn btn-primary btn", onclick: "loader();"%>
   <%end%>
 </div>
