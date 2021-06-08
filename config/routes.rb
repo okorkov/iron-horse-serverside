@@ -13,11 +13,14 @@ Rails.application.routes.draw do
   resources :info, only: [:update]
   resources :admin, only: [:index]
   resources :users, only: [:create, :destroy]
+  
+  get '/emails', to: 'emails#home'
 
   delete '/admin/delete_images_projects/:id', to: 'admin#delete_collections_projects', as: 'delete_image_attachment_collections_projects'
   delete '/admin/delete_images_wood/:id', to: 'admin#delete_collections_wood', as: 'delete_image_attachment_collections_wood'
 
   get '/api', to: 'api#data'
+
 
   match "*any", via: :all, to: "errors#not_found"
 
