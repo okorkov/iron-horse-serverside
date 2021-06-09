@@ -29,6 +29,10 @@ class ApiController < ApplicationController
       wood_pics: wood_pics,
       contact: {
         email: info.contact_email
+      },
+      yelp: {
+        key: ENV["YELP_KEY"],
+        client: ENV["YELP_CLIENT_ID"]
       }
     }
   end
