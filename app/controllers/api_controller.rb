@@ -5,7 +5,7 @@ class ApiController < ApplicationController
   def data
     info = Info.all.first
     user = User.all.first
-    # reviews = Info.get_request
+    reviews = Info.get_request
     project_pics = []
     wood_pics = []
 
@@ -31,7 +31,7 @@ class ApiController < ApplicationController
       contact: {
         email: info.contact_email
       }
-      #yelp: reviews
+      yelp: reviews
     }
   end
 end

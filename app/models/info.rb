@@ -1,6 +1,7 @@
 require "uri"
 require "net/http"
 require 'dotenv'
+require 'json'
 Dotenv.load
 
 class Info < ApplicationRecord
@@ -19,10 +20,10 @@ class Info < ApplicationRecord
     https.use_ssl = true
 
     request = Net::HTTP::Get.new(url)
-    request["Authorization"] = `Bearer #{ENV["YELP_KEY"]}`
+    request["Authorization"] = "Bearer #{ENV["YELP_KEY"]}"
 
     response = https.request(request)
-    response.read_body
+    JSON.parse(response.read_body)
 
   end
 
