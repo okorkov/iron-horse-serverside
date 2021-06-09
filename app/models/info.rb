@@ -1,6 +1,7 @@
 require "uri"
 require "net/http"
-
+require 'dotenv'
+Dotenv.load
 
 class Info < ApplicationRecord
 
