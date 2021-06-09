@@ -5,6 +5,7 @@ class ApiController < ApplicationController
   def data
     info = Info.all.first
     user = User.all.first
+    reviews = Info.get_request
     project_pics = []
     wood_pics = []
 
@@ -30,10 +31,7 @@ class ApiController < ApplicationController
       contact: {
         email: info.contact_email
       },
-      yelp: {
-        key: ENV["YELP_KEY"],
-        client: ENV["YELP_CLIENT_ID"]
-      }
+      yelp: reviews
     }
   end
 end
