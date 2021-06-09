@@ -30,7 +30,7 @@ class ApiController < ApplicationController
       wood_pics: wood_pics,
       contact: {
         email: info.contact_email
-      }
+      },
       yelp: reviews
     }
   end
