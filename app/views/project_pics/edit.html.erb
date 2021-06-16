@@ -13,9 +13,9 @@
   <%end%>
 
     <%=form_for @info do |f| %>
-    <%= f.label :upload_project_images %>
-    <%=f.file_field :project_pics, accept: 'image/png,image/gif,image/jpeg', multiple:true, class:"form-control" %>
-    <br>
-    <%=f.submit "Update Project Images", class:"btn btn-primary", onclick: "loader();"%>
-  <%end%>
+      <%= f.label :upload_project_images %>
+      <%=f.file_field :project_pics, accept: 'image/png,image/gif,image/jpeg', multiple:true, class:"form-control" %>
+      <br>
+      <%=f.submit "Update Project Images", class:"btn btn-primary", onclick: "loader();"%>
+    <%end%>
 </div>

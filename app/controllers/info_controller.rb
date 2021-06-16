@@ -1,6 +1,5 @@
 class InfoController < ApplicationController
   def update
-    # raise params.inspect
     info = Info.all.first
     if params[:info]
       info.update(info_params)

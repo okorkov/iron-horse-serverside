@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-.env
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
@@ -40,5 +40,8 @@
 yarn-debug.log*
 .yarn-integrity
 
-
 .env
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
