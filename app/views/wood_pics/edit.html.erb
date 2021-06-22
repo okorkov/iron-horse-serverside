@@ -10,7 +10,17 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
   </div>
+  
+  <%=form_for Description.find_by(image_id: img.blob_id) do |f| %>
+      <%=f.label :image_description %>
+      <%=f.text_field :content, class:"form-control" %>
+      <%=f.hidden_field :image_id, class:"form-control", value: img.blob_id %>
+            <%=f.hidden_field :redirect, class:"form-control", value: 'wood' %>
+      <br>
+      <%=f.submit "Update Image Description", class:"btn btn-warning", onclick: "loader();"%>
+    <%end%>
   <%end%>
+    <br><br><hr>
 
     <%=form_for @info do |f| %>
       <%= f.label :upload_project_images %>

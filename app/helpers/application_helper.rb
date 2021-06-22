@@ -20,4 +20,8 @@ module ApplicationHelper
     @info = Info.all.first
    end
 
+   def find_description(id)
+      Description.find_by(image_id: id).content
+   end
+
 end

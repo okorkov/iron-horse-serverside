@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :info, only: [:update]
   resources :admin, only: [:index]
   resources :users, only: [:create, :destroy]
+  resources :descriptions, only: [:update, :create]
   
   get '/emails', to: 'emails#home'
 

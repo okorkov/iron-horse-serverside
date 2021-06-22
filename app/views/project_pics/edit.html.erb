@@ -10,12 +10,21 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
   </div>
+  <%=form_for Description.find_by(image_id: img.blob_id) do |f| %>
+      <%=f.label :image_description %>
+      <%=f.text_field :content, class:"form-control" %>
+      <%=f.hidden_field :image_id, class:"form-control", value: img.blob_id %>
+      <%=f.hidden_field :redirect, class:"form-control", value: 'project' %>
+      <br>
+      <%=f.submit "Update Image Description", class:"btn btn-warning", onclick: "loader();"%>
+    <%end%>
+      <br><br><hr>
   <%end%>
-
+    <br><br><hr>
     <%=form_for @info do |f| %>
       <%= f.label :upload_project_images %>
-      <%=f.file_field :project_pics, accept: 'image/png,image/gif,image/jpeg', multiple:true, class:"form-control" %>
+      <%=f.file_field :project_pics, accept: 'image/png,image/gif,image/jpeg', class:"form-control" %>
       <br>
-      <%=f.submit "Update Project Images", class:"btn btn-primary", onclick: "loader();"%>
+      <%=f.submit "Upload New Project Image", class:"btn btn-primary", onclick: "loader();"%>
     <%end%>
 </div>

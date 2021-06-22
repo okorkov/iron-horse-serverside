@@ -10,17 +10,22 @@ class ApiController < ApplicationController
     wood_pics = []
 
     info.project_pics.each do |img|
-      project_pics << img.service.send(:object_for, img.key).public_url
+      project_pics << {
+        url: img.service.send(:object_for, img.key).public_url,
+        desc: find_description(img.blob_id)
+      }
     end
 
     info.wood_pics.each do |img|
-      wood_pics << img.service.send(:object_for, img.key).public_url
+      wood_pics << {
+        url: img.service.send(:object_for, img.key).public_url,
+        desc: find_description(img.blob_id)
+      }
     end
 
     render json: {
       header: {
         header_text:info.header_text,
-        header_image:info.header_img.service.send(:object_for, info.header_img.key).public_url
       },
       about: {
         about_text:info.about_text,
