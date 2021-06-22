@@ -28,12 +28,16 @@
   animation-fill-mode: forwards;
   height: 100%;
   position: relative;
-  background-color: #2c2c2c;
+  background: linear-gradient(to right, #0d2235, #414c55);
   color: white;
  }
 
+ /* .card-body {
+  background: linear-gradient(to right, #0d2235, #414c55);
+ } */
+
  #header-text {
-  padding-top: 5%;
+  padding-top: 2%;
   padding-left: 3%;
   padding-bottom: 3%;
   margin: 0;
@@ -42,6 +46,10 @@
   font-family: Georgia,serif;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  background: inherit;
+  opacity: 0.9;
 }
 
 
@@ -50,10 +58,11 @@
   padding-top: 2.5%;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 69px;
 }
 
 .nav-link {
-  color: black !important;
+  color: rgba(243, 196, 42, 0.904) !important;
   font-weight: 600;
   font-size: 20px !important;
 }
@@ -71,7 +80,7 @@
 }
 
 .nav-link {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .hidden {
