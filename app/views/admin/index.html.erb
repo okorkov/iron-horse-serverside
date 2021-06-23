@@ -2,16 +2,16 @@
 <h3 style="text-align:center; margin-top: 69px;">Admin Accounts</h3>
 <br>
 <div >
-  <div style='width:100%; overflow-x: auto; font-size:0.9rem;'>
+  <div style='width:100%; overflow-x: auto; font-size:0.9rem; margin:auto;'>
     <table style='border: 1px solid rgba(rgb(103, 165, 216), 0); width: 100%; overflow-x: auto;'>
       <thead>
         <tr style='color:rgb(243, 196, 42, 0.904) !important; border: 1px solid rgba(rgb(103, 165, 216), 0);'>
           <%# <th scope="col">#</th> %>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Date Created</th>
+          <th scope="col" style='font-size:1.5vmax;'>Name</th>
+          <th scope="col" style='font-size:1.5vmax;'>Email</th>
+          <th scope="col" style='font-size:1.5vmax;'>Created</th>
           <%if current_user.admin%>
-          <th scope="col">Delete Account</th>
+          <th scope="col" style='font-size:1.5vmax;'>Delete Account</th>
           <%end%>
         </tr>
       </thead>
@@ -19,14 +19,14 @@
         <%counter = 1%>
         <%@admins.each do |admin|%>
           <tr style='color: white;'>
-          <td style='font-size:1.55vmax;'><%=admin.name%></td>
-          <td style='font-size:1.55vmax;'><%=admin.email%></td>
-          <td style='font-size:1.55vmax;'><%=admin.created_at.strftime('%m/%d/%Y')%></td>
+          <td style='font-size:1.5vmax;'><%=admin.name%></td>
+          <td style='font-size:1.5vmax;'><%=admin.email%></td>
+          <td style='font-size:1.5vmax;'><%=admin.created_at.strftime('%m/%d/%Y')%></td>
           <%if current_user.admin%>
-          <td style='font-size:1.55vmax;'>
+          <td style='font-size:1.5vmax;'>
           <%= link_to 'Remove', user_path(admin),
                     method: :delete,
-                    data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger'%>
+                    data: { confirm: 'Are you sure?' }, class: 'btn-sm btn-danger'%>
           </td>
           <%end%>
           <%counter += 1%>
