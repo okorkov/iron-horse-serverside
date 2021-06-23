@@ -77,7 +77,7 @@
   font-weight: 690;
   letter-spacing: 1px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
-  transition: all 280ms ease-in-out;
+  transition: all 160ms ease-in-out;
 }
 
 .nav-link:after,

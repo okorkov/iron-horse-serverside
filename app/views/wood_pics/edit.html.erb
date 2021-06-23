@@ -4,11 +4,11 @@
 <div class="category container">
   
 <%@info.wood_pics.each do |img|%>
-  <div class="collection-of-images">
-  <%=image_tag img.service.send(:object_for, img.key).public_url, class:'header-img'%>
-   <%= link_to 'Remove', delete_image_attachment_collections_wood_url(img.signed_id),
+  <%= link_to 'Remove', delete_image_attachment_collections_wood_url(img.signed_id),
                 method: :delete,
-                data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger'%>
+  <div class="collection-of-images">
+    <%=image_tag img.service.send(:object_for, img.key).public_url, class:'header-img'%>
   </div>
   
   <%=form_for Description.find_by(image_id: img.blob_id) do |f| %>
@@ -17,7 +17,8 @@
       <%=f.hidden_field :image_id, class:"form-control", value: img.blob_id %>
             <%=f.hidden_field :redirect, class:"form-control", value: 'wood' %>
       <br>
-      <%=f.submit "Update Image Description", class:"btn btn-warning", onclick: "loader();"%>
+      <%=f.submit "Update Image Description", class:"btn btn-outline-warning", onclick: "loader();"%>
+      <br><br><hr>
     <%end%>
   <%end%>
     <br><br><hr>
