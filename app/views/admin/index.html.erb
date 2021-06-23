@@ -1,38 +1,39 @@
 <div class="container" style="margin-top:4.5%;">
 <h3 style="text-align:center; margin-top: 69px;">Admin Accounts</h3>
 <br>
-<table style='border: 1px solid rgba(rgb(103, 165, 216), 0); width: 100%'>
-  <thead>
-    <tr style='color:rgb(243, 196, 42, 0.904) !important; border: 1px solid rgba(rgb(103, 165, 216), 0);'>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Date Created</th>
-      <%if current_user.admin%>
-      <th scope="col">Delete Account</th>
+<div style='width:100%; overflow-x: auto;'>
+  <table style='border: 1px solid rgba(rgb(103, 165, 216), 0); width: 100%; overflow-x: auto;'>
+    <thead>
+      <tr style='color:rgb(243, 196, 42, 0.904) !important; border: 1px solid rgba(rgb(103, 165, 216), 0);'>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date Created</th>
+        <%if current_user.admin%>
+        <th scope="col">Delete Account</th>
+        <%end%>
+      </tr>
+    </thead>
+    <tbody >
+      <%counter = 1%>
+      <%@admins.each do |admin|%>
+        <tr style='color: white;'>
+        <th scope="row"><%=counter%></th>
+        <td><%=admin.name%></td>
+        <td><%=admin.email%></td>
+        <td><%=admin.created_at.strftime('%m/%d/%Y')%></td>
+        <%if current_user.admin%>
+        <td>
+        <%= link_to 'Remove', user_path(admin),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger'%>
+        </td>
+        <%end%>
+        <%counter += 1%>
+        </tr> 
       <%end%>
-    </tr>
-  </thead>
-  <tbody >
-    <%counter = 1%>
-    <%@admins.each do |admin|%>
-      <tr style='color: white;'>
-      <th scope="row"><%=counter%></th>
-      <td><%=admin.name%></td>
-      <td><%=admin.email%></td>
-      <td><%=admin.created_at.strftime('%m/%d/%Y')%></td>
-      <%if current_user.admin%>
-      <td>
-       <%= link_to 'Remove', user_path(admin),
-                method: :delete,
-                data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger'%>
-      </td>
-      <%end%>
-      <%counter += 1%>
-      </tr> 
-    <%end%>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 <br>
   <h4 style="text-align:center; color:red;"><%=@error%></h4>
   <%if current_user.admin%>
