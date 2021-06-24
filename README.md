@@ -1,6 +1,6 @@
-# Admin panel for ironhorsestudio.net
+# Admin panel for  [ironhorsestudio.net](https://ironhorsestudio.net)
 
-### Hosted on [www.ironspringsroad.com](https://www.ironspringsroad.com/)
+### Hosted on [www.ironspringsroad.com](https://www.ironspringsroad.com)
 ### Frontend [Repo](https://github.com/okorkov/iron-horse)
 
 A link to the license (MIT) for this code is located here in the main directory of the GitHub repository (license.txt). Created by: Alex Okarkau and Juan Carlos Meza
