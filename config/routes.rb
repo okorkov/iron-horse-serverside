@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   delete '/admin/delete_images_projects/:id', to: 'admin#delete_collections_projects', as: 'delete_image_attachment_collections_projects'
   delete '/admin/delete_images_wood/:id', to: 'admin#delete_collections_wood', as: 'delete_image_attachment_collections_wood'
 
-  get '/api', to: 'api#data'
+  get '/api', to: 'api#index'
 
 
   match "*any", via: :all, to: "errors#not_found"
