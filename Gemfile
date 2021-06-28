@@ -28,6 +28,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'bootstrap-email'
 
 gem 'actionpack-page_caching'
+gem 'redis-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

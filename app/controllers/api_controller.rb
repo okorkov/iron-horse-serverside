@@ -5,7 +5,11 @@ class ApiController < ApplicationController
   caches_page :index
   
   def index
-   render json: Info.cache_api
+    json = Rails.cache.fetch('posts') do
+    Info.cache_api
+    end
+    
+    render json: json
   end
 
 end
